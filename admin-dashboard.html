@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Addis Eats admin dashboard">
+    <title>Addis Eats | Admin Command Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-page">
+    <header class="admin-topbar">
+        <div class="admin-brand"><a class="brand" href="index.html"><span>ADDIS</span> EATS</a><span
+                class="admin-badge">ADMIN</span></div>
+        <div class="admin-top-actions"><a class="admin-link" href="index.html">View customer site ↗</a><button
+                id="logoutBtn" class="logout-btn">Logout</button></div>
+    </header>
+    <div class="admin-shell">
+        <aside class="admin-sidebar" aria-label="Admin navigation">
+            <div class="admin-user">
+                <div class="avatar">A</div>
+                <div><strong>Administrator</strong><small>Store manager</small></div>
+            </div>
+            <nav><a class="side-link active" href="#overview">⌂ <span>Overview</span></a><a class="side-link"
+                    href="#menuManagement">▦ <span>Menu management</span></a><a class="side-link"
+                    href="#ordersSection">◷ <span>Orders</span><b id="sideOrderCount">0</b></a></nav>
+            <div class="side-tip"><strong>Store status</strong><span><i></i> Online</span><small>Customers can see
+                    enabled dishes.</small></div>
+        </aside>
+        <main class="admin-content container">
+            <section id="overview" class="admin-hero">
+                <div>
+                    <p class="eyebrow">COMMAND CENTER</p>
+                    <h1>Good evening, Admin.</h1>
+                    <p>Manage your menu, control availability and keep orders moving.</p>
+                </div><button id="addDishBtn" class="primary-btn">+ Add new dish</button>
+            </section>
+            <section id="analytics" class="stats-grid"></section>
+            <section class="admin-panels">
+                <article class="panel dashboard-card">
+                    <div class="panel-head">
+                        <div>
+                            <p class="eyebrow">PERFORMANCE</p>
+                            <h2>Top selling dishes</h2>
+                        </div><span class="live-tag">LIVE</span>
+                    </div>
+                    <div id="topDishes"></div>
+                </article>
+                <article class="panel dashboard-card">
+                    <div class="panel-head">
+                        <div>
+                            <p class="eyebrow">OPERATIONS</p>
+                            <h2>Order status</h2>
+                        </div>
+                    </div>
+                    <div id="statusDistribution"></div>
+                </article>
+            </section>
+            <section id="menuManagement" class="panel menu-manager">
+                <div class="panel-head menu-manager-head">
+                    <div>
+                        <p class="eyebrow">MENU MANAGEMENT</p>
+                        <h2>Control what customers can order</h2>
+                        <p class="muted">Enable a dish to show it on the customer menu. Disable it instantly when sold
+                            out.</p>
+                    </div>
+                    <div class="manager-actions"><input id="adminDishSearch" class="compact-input"
+                            placeholder="Search dishes" aria-label="Search dishes"><button id="addDishBtn2"
+                            class="secondary-btn" type="button">+ Add dish</button></div>
+                </div>
+                <div class="availability-summary"><span><i class="online-dot"></i> <strong id="enabledCount">0</strong>
+                        enabled</span><span><i class="offline-dot"></i> <strong id="disabledCount">0</strong>
+                        disabled</span><span class="muted">Changes save automatically</span></div>
+                <div class="dish-grid" id="dishGrid"></div>
+            </section>
+            <section id="ordersSection" class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">ORDER MANAGEMENT</p>
+                        <h2>Recent orders</h2>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <dialog id="dishDialog" class="modal">
+        <form id="dishForm"><button type="button" id="dishClose" class="close-btn modal-close">×</button>
+            <p class="eyebrow">MENU MANAGEMENT</p>
+            <h2 id="dishDialogTitle">Add dish</h2><input type="hidden" id="dishId"><label>Name<input id="dishName"
+                    required></label><label>Description<textarea id="dishDescription"
+                    required></textarea></label><label>Price (ETB)<input id="dishPrice" type="number" min="0"
+                    required></label><label>Category<select id="dishCategory">
+                    <option value="ethiopian">Ethiopian</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="burgers">Burgers</option>
+                    <option value="drinks">Drinks</option>
+                </select></label><label>Image path<input id="dishImage" value="images/your-image.jpg"
+                    required></label><label>Ingredients<input id="dishIngredients"
+                    placeholder="Chicken, Onion, Berbere"></label><label class="check-row"><input id="dishEnabled"
+                    type="checkbox" checked><span>Available to customers</span></label><button
+                class="primary-btn full">Save dish</button>
+        </form>
+    </dialog>
+    <script src="admin.js"></script>
+</body>
+
+</html>

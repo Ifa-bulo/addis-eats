@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Addis Eats food ordering website">
+  <title>Addis Eats | Order Great Food</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Addis Eats home">
+        <img src="Images/logoo.jpg" alt="Addis Eats logo">
+        <span><strong>ADDIS</strong></span> EATS</a>
+
+      <div class="header-search">
+        <label class="sr-only" for="searchInput">Search dishes</label>
+        <input id="searchInput" type="search" placeholder="Search dishes..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button id="favoritesOpen" class="nav-btn favorite-nav" type="button" aria-label="Open favorites">♡
+          <span>Favorites</span> <b id="favoritesBadge">0</b></button>
+        <button id="historyOpen" class="nav-btn" type="button">Orders</button>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark and light theme">◐</button>
+        <span class="cart-badge" aria-label="Cart item count"><span aria-hidden="true">🛒</span><b
+            id="cartBadge">0</b></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">ADDIS ABABA • FRESH • FAST</p>
+        <h1 id="heroTitle">Great food.<br><em>Right to you.</em></h1>
+        <p>Explore Ethiopian favorites, pizza, burgers and refreshing drinks, then order in a few clicks.</p>
+        <a class="primary-btn" href="#menu">Browse menu ↓</a>
+      </div>
+    </section>
+
+    <section id="menu" class="ordering-layout container" aria-label="Menu and shopping cart">
+      <div class="menu-column">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">OUR MENU</p>
+            <h2>What are you craving?</h2>
+          </div>
+          <div class="menu-tools"><span id="menuCount" class="muted"></span><button id="surpriseBtn"
+              class="surprise-btn" type="button">✦ Surprise me</button></div>
+        </div>
+
+        <div id="categoryFilters" class="filters" role="group" aria-label="Filter menu by category">
+          <button class="filter active" type="button" data-category="all">All</button>
+          <button class="filter" type="button" data-category="ethiopian">Ethiopian</button>
+          <button class="filter" type="button" data-category="pizza">Pizza</button>
+          <button class="filter" type="button" data-category="burgers">Burgers</button>
+          <button class="filter" type="button" data-category="drinks">Drinks</button>
+        </div>
+
+        <div id="menuStatus" class="status" role="status" aria-live="polite">Loading menu...</div>
+        <div id="recommendationSection" class="recommendation-section hidden">
+          <div class="recommendation-head">
+            <div>
+              <p class="eyebrow">JUST FOR YOU</p>
+              <h3>You may also like</h3>
+            </div><span class="muted">Based on your choices</span>
+          </div>
+          <div id="recommendationGrid" class="recommendation-grid"></div>
+        </div>
+        <div id="menuGrid" class="menu-grid"></div>
+      </div>
+
+      <aside class="cart-panel" aria-labelledby="cartTitle">
+        <div class="cart-panel-head">
+          <div>
+            <p class="eyebrow"><span class="live-dot"></span> LIVE CART</p>
+            <h2 id="cartTitle">Your order</h2>
+          </div>
+          <button id="clearCart" class="text-btn" type="button">Clear</button>
+        </div>
+
+        <div id="cartItems" class="cart-items" aria-live="polite"></div>
+
+        <div class="delivery-box">
+          <label for="deliveryArea">Delivery area</label>
+          <select id="deliveryArea">
+            <option value="">Select area</option>
+            <option value="Arat Kilo">Arat Kilo</option>
+            <option value="akaki-kaliti">Akaki-Kaliti</option>
+            <option value="lideta">Lideta</option>
+            <option value="kirkos">Kirkos</option>
+            <option value="saris">Saris</option>
+            <option value="ayertena">Ayertena</option>
+            <option value="gotera">Gotera</option>
+            <option value="abnet square">Abnet Square</option>
+            <option value="lebu">Lebu</option>
+            <option value="gerji">Gerji</option>
+            <option value="ayat">Ayat</option>
+            <option value="jemo">Jemo</option>
+            <option value="bole">Bole</option>
+            <option value="kazanchis">Kazanchis</option>
+            <option value="piassa">Piassa</option>
+            <option value="mexico">Mexico</option>
+            <option value="sarbet">Sarbet</option>
+            <option value="yeka">Yeka</option>
+            <option value="other">Other Addis area</option>
+          </select>
+          <small id="deliveryMessage">Choose an area to calculate delivery.</small>
+        </div>
+
+        <div class="cart-summary">
+          <div><span>Items</span><strong id="cartItemCount">0</strong></div>
+          <div><span>Subtotal</span><strong id="cartSubtotal">0 ETB</strong></div>
+          <div><span>Delivery</span><strong id="deliveryFee">0 ETB</strong></div>
+          <div class="grand-total"><span>Total</span><strong id="cartTotal">0 ETB</strong></div>
+        </div>
+
+        <button id="checkoutOpen" class="primary-btn full" type="button" disabled>Checkout</button>
+        <small id="checkoutHint" class="checkout-hint">Add a dish to enable checkout.</small>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="index.html"><span>ADDIS</span> EATS</a>
+        <p>Good food, better mood.</p>
+      </div>
+      <address><strong>Visit / Contact</strong><br>Addis Ababa, Ethiopia<br><a href="tel:+251910000002">+251 91 000
+          0002</a><br><a href="mailto:hello@addiseats.com">hello@addiseats.com</a></address>
+      <div><strong>Follow us</strong>
+        <div class="socials"><a href="#" aria-label="Instagram">Instagram</a><a href="#"
+            aria-label="Facebook">Facebook</a><a href="#" aria-label="TikTok">TikTok</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="checkoutDialog" class="modal">
+    <form id="checkoutForm" method="dialog">
+      <button type="button" id="checkoutClose" class="close-btn modal-close" aria-label="Close checkout">×</button>
+      <p class="eyebrow">DELIVERY DETAILS</p>
+      <h2>Complete your order</h2>
+      <div class="eta-banner"><strong>Estimated delivery:</strong> <span id="checkoutEta">35–50 minutes</span></div>
+      <label>Full name<input id="customerName" required minlength="2" autocomplete="name"></label>
+      <label>Phone number<input id="customerPhone" required inputmode="tel" pattern="^(\+251|0)?9[0-9]{8}$"
+          placeholder="09xxxxxxxx" autocomplete="tel"></label>
+      <label>Delivery area<select id="checkoutArea" required>
+          <option value="">Select area</option>
+          <option value="bole">Bole</option>
+          <option value="kazanchis">Kazanchis</option>
+          <option value="piassa">Piassa</option>
+          <option value="mexico">Mexico</option>
+          <option value="sarbet">Sarbet</option>
+          <option value="yeka">Yeka</option>
+          <option value="other">Other Addis area</option>
+        </select></label>
+      <label>Special instructions<textarea id="specialInstructions" rows="3" maxlength="250"
+          placeholder="Gate number, allergies, delivery note..."></textarea></label>
+      <div class="checkout-total"><span>Order total</span><strong id="checkoutTotal">0 ETB</strong></div>
+      <p id="formError" class="error" role="alert"></p>
+      <button class="primary-btn full" type="submit">Place order</button>
+    </form>
+  </dialog>
+
+  <dialog id="detailDialog" class="modal detail-modal">
+    <button id="detailClose" class="close-btn modal-close" type="button" aria-label="Close dish details">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <dialog id="favoritesDialog" class="modal wide-modal">
+    <button id="favoritesClose" class="close-btn modal-close" type="button" aria-label="Close favorites">×</button>
+    <p class="eyebrow">SAVED FOR LATER</p>
+    <h2>Your favorites</h2>
+    <div id="favoritesContent" class="favorites-list"></div>
+  </dialog>
+
+  <dialog id="historyDialog" class="modal wide-modal">
+    <button id="historyClose" class="close-btn modal-close" type="button" aria-label="Close order history">×</button>
+    <p class="eyebrow">YOUR ORDERS</p>
+    <h2>Order history</h2>
+    <div id="historyContent" class="history-list"></div>
+  </dialog>
+
+  <section id="confirmation" class="confirmation hidden" aria-live="polite">
+    <div class="confirmation-box">
+      <span class="success-mark">✓</span>
+      <p class="eyebrow">ORDER RECEIVED</p>
+      <h2>Thank you for ordering.</h2>
+      <p id="confirmationText"></p>
+      <div class="confirmation-actions"><button id="trackOrderBtn" class="primary-btn" type="button">Track my
+          order</button><button id="confirmationClose" class="secondary-btn" type="button">Back to menu</button></div>
+    </div>
+  </section>
+
+
+  <dialog id="trackingDialog" class="modal tracking-modal">
+    <button id="trackingClose" class="close-btn modal-close" type="button" aria-label="Close order tracking">×</button>
+    <p class="eyebrow"><span class="live-dot"></span> LIVE ORDER TRACKING</p>
+    <div id="trackingContent"></div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+
+</html>

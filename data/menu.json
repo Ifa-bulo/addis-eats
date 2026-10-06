@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "Doro Wat",
+    "description": "Spicy Ethiopian chicken stew with berbere, served with injera",
+    "price": 350,
+    "category": "Ethiopian",
+    "image": "Images/DoroWot.jpg",
+    "ingredients": [
+      "Chicken",
+      "Berbere",
+      "Onions",
+      "Injera",
+      "Garlic",
+      "Ginger"
+    ],
+    "enabled": true
+  },
+  {
+    "id": 2,
+    "name": "Tibs",
+    "description": "Sizzling strips of tender beef with onions, peppers and herbs",
+    "price": 420,
+    "category": "Ethiopian",
+    "image": "Images/Awaze_tibs.webp",
+    "ingredients": [
+      "Beef",
+      "Onion",
+      "Pepper",
+      "Rosemary"
+    ],
+    "enabled": true
+  },
+  {
+    "id": 3,
+    "name": "Special Pizza",
+    "description": "Classic pizza with tomato, mozzarella and fresh basil",
+    "price": 390,
+    "category": "pizza",
+    "image": "Images/pizza.jpg",
+    "ingredients": [
+      "Tomato",
+      "Mozzarella",
+      "Basil"
+    ],
+    "enabled": true
+  },
+  {
+    "id": 4,
+    "name": "Spicy Beef Pizza",
+    "description": "Loaded pizza with seasoned beef, peppers and cheese",
+    "price": 480,
+    "category": "pizza",
+    "image": "Images/special_pizza.jpg",
+    "ingredients": [
+      "Beef",
+      "Pepper",
+      "Cheese"
+    ],
+    "enabled": true
+  },
+  {
+    "id": 5,
+    "name": "special Burger",
+    "description": "Juicy beef burger with cheese, lettuce and house sauce",
+    "price": 380,
+    "category": "burgers",
+    "image": "Images/burgernew.jpg",
+    "ingredients": [
+      "Beef",
+      "Cheese",
+      "Lettuce",
+      "Sauce"
+    ],
+    "enabled": true
+  },
+  {
+    "id": 6,
+    "name": "Double Burger",
+    "description": "Double beef patties, caramelized onions and cheddar",
+    "price": 520,
+    "category": "burgers",
+    "image": "Images/chicken_burger.jpg",
+    "ingredients": [
+      "Beef",
+      "Cheddar",
+      "Onion"
+    ],
+    "enabled": true
+  },
+  {
+    "id": 7,
+    "name": "Ethiopian Coffee",
+    "description": "Freshly roasted Ethiopian coffee brewed in traditional style",
+    "price": 120,
+    "category": "drinks",
+    "image": "Images/coffee.jpg",
+    "ingredients": [
+      "Coffee"
+    ],
+    "enabled": true
+  },
+  {
+    "id": 8,
+    "name": "Mango Juice",
+    "description": "Cold, naturally sweet mango juice",
+    "price": 140,
+    "category": "drinks",
+    "image": "Images/mango.jpg",
+    "ingredients": [
+      "Mango",
+      "Water"
+    ],
+    "enabled": true
+  }
+]
